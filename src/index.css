@@ -1,0 +1,178 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Design system for Hotel Principal CDMX - Historic elegance meets modern hospitality.
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Brand colors inspired by Hotel Principal's golden elegance */
+    --primary: 45 100% 51%; /* Golden yellow - signature brand color */
+    --primary-foreground: 0 0% 9%;
+    --primary-light: 45 100% 85%;
+    
+    /* Core palette */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 9%;
+
+    /* Historic elegance tones */
+    --secondary: 20 6% 90%; /* Warm stone gray */
+    --secondary-foreground: 0 0% 9%;
+    --secondary-dark: 20 8% 25%; /* Charcoal gray */
+    
+    /* Card and surface colors */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 9%;
+    --card-hover: 45 100% 97%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 9%;
+
+    /* Accent and muted colors */
+    --accent: 25 15% 94%; /* Warm cream */
+    --accent-foreground: 0 0% 9%;
+    --accent-warm: 25 20% 85%; /* Warmer cream for hover states */
+    
+    --muted: 20 6% 90%;
+    --muted-foreground: 0 0% 45%;
+    --muted-dark: 0 0% 25%;
+
+    /* Status colors */
+    --destructive: 0 65% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 120 40% 45%;
+    --success-foreground: 0 0% 100%;
+
+    /* Interactive elements */
+    --border: 20 6% 85%;
+    --input: 0 0% 100%;
+    --ring: 45 100% 51%;
+
+    /* Design tokens */
+    --radius: 0.75rem;
+    --radius-sm: 0.5rem;
+    --radius-lg: 1rem;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(45 100% 51%) 0%, hsl(45 90% 45%) 100%);
+    --gradient-hero: linear-gradient(135deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.7) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(25 15% 97%) 100%);
+    
+    /* Shadows */
+    --shadow-elegant: 0 4px 20px -4px hsl(0 0% 0% / 0.1);
+    --shadow-card: 0 2px 12px -2px hsl(0 0% 0% / 0.08);
+    --shadow-button: 0 2px 8px -2px hsl(45 100% 51% / 0.3);
+    
+    /* Typography scale */
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 1.875rem;
+    --font-size-4xl: 2.25rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark mode preserves the elegant golden brand */
+    --background: 0 0% 9%;
+    --foreground: 0 0% 95%;
+    
+    --primary: 45 100% 55%; /* Slightly brighter gold for dark mode */
+    --primary-foreground: 0 0% 9%;
+    
+    --secondary: 20 8% 15%;
+    --secondary-foreground: 0 0% 90%;
+    --secondary-dark: 20 8% 25%;
+    
+    --card: 0 0% 12%;
+    --card-foreground: 0 0% 95%;
+    --card-hover: 45 25% 12%;
+
+    --popover: 0 0% 12%;
+    --popover-foreground: 0 0% 95%;
+
+    --accent: 20 8% 15%;
+    --accent-foreground: 0 0% 90%;
+    
+    --muted: 20 8% 15%;
+    --muted-foreground: 0 0% 65%;
+    
+    --border: 20 8% 20%;
+    --input: 20 8% 15%;
+    --ring: 45 100% 55%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  /* Typography improvements */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif font-medium tracking-tight;
+  }
+  
+  .font-serif {
+    font-family: "Playfair Display", "Georgia", serif;
+  }
+  
+  .font-sans {
+    font-family: "Inter", "system-ui", sans-serif;
+  }
+  
+  /* Smooth transitions */
+  .transition-elegant {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary));
+    border-radius: 3px;
+  }
+}
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
